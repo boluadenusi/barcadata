@@ -1,0 +1,121 @@
+.section-asterisk { color: var(--garnet); margin-bottom: 5px; flex-shrink: 0; }
+.personal-grid { display: grid; grid-template-columns: 1.12fr 1fr 1fr; gap: 18px; margin-top: 36px; }
+.personal-note { position: relative; padding: 25px 27px 28px; background: #ece9df; --muted: #4e564d; }
+.note-label { display: flex; justify-content: space-between; font-size: 7px; letter-spacing: 1.3px; font-weight: 500; }
+.note-label > span:last-child { color: var(--muted); }
+.manager-pitch { height: 173px; display: flex; align-items: center; justify-content: center; padding-block: 26px 15px; }
+.manager-pitch svg { width: 100%; max-width: 260px; stroke: #a0aa96; stroke-width: 1; }
+.manager-pitch .passing-line { stroke: #a0aa96; stroke-dasharray: 4 5; stroke-width: 1.3; }
+.manager-pitch .tactical-dot { fill: var(--blue); stroke: var(--blue); }
+.manager-pitch .last-dot { fill: var(--garnet); stroke: var(--garnet); }
+.note-kicker { font-size: 9px; color: var(--muted); margin-bottom: 12px; }
+.personal-note h3 { font-family: var(--font-serif); font-size: 39px; line-height: .98; letter-spacing: -.8px; font-weight: 400; }
+.note-description { font-size: 11px; line-height: 1.7; color: var(--muted); margin-top: 16px; }
+.peer-note { background: #e4e8e5; }
+.shirt-art { position: relative; height: 180px; display: flex; justify-content: center; margin: 4px auto 5px; overflow: hidden; }
+.shirt-art img { display: block; width: 220px; height: 180px; object-fit: contain; mix-blend-mode: multiply; }
+.shirt-personalisation { position: absolute; top: 44px; left: 50%; width: 96px; transform: translateX(-50%) perspective(180px) rotateX(-5deg); display: flex; flex-direction: column; align-items: center; color: var(--gold); font-family: var(--font-number); font-weight: 700; text-transform: uppercase; }
+.shirt-personalisation span { max-width: 100%; overflow: hidden; font-size: 14px; letter-spacing: .5px; line-height: 1; text-overflow: ellipsis; white-space: nowrap; }
+.shirt-personalisation strong { position: relative; top: 2px; left: -0px; font-size: 60px; line-height: .95; letter-spacing: -2px; }
+.curation-note { display: block; font-size: 8px; color: var(--muted); margin-top: 15px; }
+.first-match-note { background: transparent; border: 1px solid var(--line); }
+.first-whistle-art { height: 173px; display: flex; flex-direction: column; align-items: start; justify-content: center; }
+.first-whistle-art > span:first-child { font-family: var(--font-number); color: var(--garnet); font-size: 82px; font-weight: 500; line-height: 1; letter-spacing: -6px; }
+.first-whistle-art > span:last-child { margin-top: 6px; font-size: 8px; letter-spacing: 1.6px; color: var(--garnet); }
+.first-match-note h3 { font-size: 36px; line-height: 1.05; }
+.note-arrow { margin-top: 15px; color: var(--garnet); }
+.cabinet-section { background: #ede4cc; --line: #cfc7b3; --muted: #5c6558; }
+.cabinet-section h2 { font-size: 56px; }
+.cabinet-section h2 em { color: #80522f; }
+.cabinet-intro { font-family: var(--font-number); font-size: 13px; line-height: 1.7; text-align: center; }
+.trophy-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--line); }
+.trophy-card { padding: 28px 30px 20px; }
+.trophy-card:first-child { padding-left: 0; }
+.trophy-card:last-child { padding-right: 0; }
+.trophy-card + .trophy-card { border-left: 1px solid var(--line); }
+.trophy-card-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.trophy-count { font-family: var(--font-number); font-size: 79px; font-weight: 400; line-height: 1; letter-spacing: -5px; font-variant-numeric: tabular-nums; color: var(--blue); }
+.trophy-europe .trophy-count { color: var(--garnet); }
+.trophy-cup .trophy-count { color: #8a6334; }
+.trophy-drawing { width: 152px; height: 174px; object-fit: contain; mix-blend-mode: multiply; }
+.trophy-card h3 { font-family: var(--font-display); font-size: 21px; font-weight: 500; letter-spacing: -.8px; margin-top: 16px; }
+.trophy-card > p { color: var(--muted); font-size: 11px; line-height: 1.5; margin-top: 9px; }
+.trophy-seasons { margin-top: 23px; }
+.trophy-seasons summary { min-height: 44px; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 10px; cursor: pointer; gap: 20px; }
+.trophy-seasons summary::-webkit-details-marker { display: none; }
+.trophy-seasons summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.trophy-seasons summary svg { transition: transform .15s; }
+.trophy-seasons[open] summary svg { transform: rotate(180deg); }
+.trophy-seasons ul { padding: 10px 0 0; margin: 0; list-style: none; }
+.trophy-seasons li { display: flex; justify-content: space-between; gap: 10px; font-size: 10px; padding-block: 11px; border-top: 1px solid var(--line); }
+.trophy-seasons strong { font-weight: 600; }
+.trophy-seasons time { font-size: 9px; color: var(--muted); }
+.trophy-empty { min-height: 44px; padding-top: 15px; }
+@media (max-width: 1199px) {
+  .personal-grid { gap: 14px; grid-template-columns: repeat(3, 1fr); }
+  .personal-note { padding: 23px 21px; }
+  .personal-note h3 { font-size: 35px; }
+  .note-description { font-size: 10px; }
+  .trophy-count { font-size: 65px; }
+  .trophy-drawing { width: 128px; height: 154px; }
+  .trophy-card { padding-inline: 26px; }
+}
+@media (max-width: 899px) {
+  .personal-note { padding-inline: 17px; }
+  .note-label { font-size: 6px; letter-spacing: .9px; }
+  .personal-note h3 { font-size: 31px; }
+  .manager-pitch, .first-whistle-art { height: 151px; }
+  .shirt-art { height: 155px; }
+  .shirt-art img { width: 190px; height: 155px; }
+  .shirt-personalisation { top: 39px; width: 84px; }
+  .shirt-personalisation span { font-size: 13px; }
+  .shirt-personalisation strong { font-size: 51px; }
+  .note-kicker { font-size: 8px; }
+  .note-description { font-size: 10px; }
+  .curation-note { font-size: 7px; }
+  .first-whistle-art > span:first-child { font-size: 70px; }
+  .cabinet-section h2 { font-size: 46px; }
+  .cabinet-intro { font-size: 11px; }
+  .trophy-card { padding: 24px 19px 18px; }
+  .trophy-count { font-size: 57px; }
+  .trophy-drawing { width: 105px; height: 136px; }
+  .trophy-card-top { gap: 8px; }
+  .trophy-card h3 { font-size: 18px; letter-spacing: -.7px; }
+  .trophy-card > p { font-size: 10px; }
+  .trophy-seasons summary { font-size: 8px; gap: 10px; }
+  .trophy-seasons li { flex-direction: column; gap: 5px; }
+}
+@media (max-width: 639px) {
+  .personal-section .section-heading { flex-direction: row; align-items: start; }
+  .personal-section h2 { max-width: 300px; }
+  .section-asterisk { width: 26px; height: 26px; margin-top: 30px; }
+  .personal-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 29px; }
+  .personal-note { padding: 24px; }
+  .note-label { font-size: 8px; }
+  .manager-pitch, .first-whistle-art { height: 159px; }
+  .manager-pitch { padding-block: 20px; max-width: 230px; }
+  .personal-note h3 { font-size: 38px; }
+  .note-kicker { font-size: 10px; }
+  .note-description { font-size: 12px; max-width: 370px; }
+  .shirt-art { height: 170px; margin-top: 2px; margin-bottom: 2px; }
+  .shirt-art img { width: 208px; height: 170px; }
+  .shirt-personalisation { top: 41px; width: 90px; }
+  .curation-note { font-size: 8px; }
+  .first-whistle-art { height: 145px; }
+  .first-whistle-art > span:first-child { font-size: 79px; }
+  .cabinet-section h2 { font-size: 44px; }
+  .cabinet-intro { font-size: 12px; }
+  .trophy-grid { grid-template-columns: 1fr; margin-top: 27px; }
+  .trophy-card, .trophy-card:first-child, .trophy-card:last-child { padding: 22px 0; }
+  .trophy-card + .trophy-card { border-left: 0; border-top: 1px solid var(--line); }
+  .trophy-card-top { float: right; width: 47%; height: 110px; flex-direction: row-reverse; }
+  .trophy-count { font-size: 58px; align-self: start; padding-top: 5px; }
+  .trophy-drawing { width: 88px; height: 119px; margin-top: -1px; }
+  .trophy-card h3 { font-size: 21px; max-width: 48%; margin-top: 8px; }
+  .trophy-card > p { max-width: 46%; font-size: 11px; line-height: 1.6; }
+  .trophy-seasons { clear: both; padding-top: 15px; margin-top: 20px; }
+  .trophy-seasons summary { font-size: 10px; }
+  .trophy-seasons li { flex-direction: row; gap: 10px; font-size: 11px; }
+  .trophy-seasons time { font-size: 10px; }
+  .trophy-empty { clear: both; max-width: none !important; padding-top: 18px; }
+}
