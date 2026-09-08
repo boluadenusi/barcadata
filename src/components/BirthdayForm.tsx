@@ -44,9 +44,5 @@ export function BirthdayForm({ onBirthday }: { onBirthday: (date: string, exampl
       <button className="button button-primary" type="submit">Find my Barça <ArrowUpRight size={19} /></button>
     </form>
     {error && <p className="form-error" id="birthday-error" role="alert">{error}</p>}
-    <div className="form-footnotes">
-      <span><LockKeyhole size={12} /> Just between you and this browser.</span>
-      <button className="text-button" onClick={example}>Try an example <ArrowUpRight size={13} /></button>
-    </div>
   </div>;
 }

@@ -278,6 +278,8 @@ h2 em { font-size: 1.12em; letter-spacing: -1px; }
   .chapter-band span:nth-child(2), .chapter-band span:nth-child(5) { display: none; }
   .chapter-band span:nth-child(3) { font-size: 24px; }
   .section-space { padding-top: 49px; padding-bottom: 49px; }
+  .page-stack > * { top: 0; bottom: auto; min-height: 0; }
+  .page-stack > .chapter-band { position: relative; top: auto; }
   .section-heading { flex-direction: column; gap: 20px; }
   .section-index { font-size: 8px; margin-bottom: 13px; letter-spacing: 1.3px; }
   h2 { font-size: 35px; letter-spacing: -1.8px; }
