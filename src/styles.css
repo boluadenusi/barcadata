@@ -278,7 +278,15 @@ h2 em { font-size: 1.12em; letter-spacing: -1px; }
   .chapter-band span:nth-child(2), .chapter-band span:nth-child(5) { display: none; }
   .chapter-band span:nth-child(3) { font-size: 24px; }
   .section-space { padding-top: 49px; padding-bottom: 49px; }
-  .page-stack > * { top: 0; bottom: auto; min-height: 0; }
+  .page-stack > * { position: sticky; top: 0; bottom: auto; min-height: 0; }
+  .page-stack > *:nth-child(1) { z-index: 1; }
+  .page-stack > *:nth-child(2) { z-index: 2; }
+  .page-stack > *:nth-child(3) { z-index: 3; }
+  .page-stack > *:nth-child(4) { z-index: 4; }
+  .page-stack > *:nth-child(5) { z-index: 5; }
+  .page-stack > *:nth-child(6) { z-index: 6; }
+  .page-stack > *:nth-child(7) { z-index: 7; }
+  .page-stack > *:nth-child(8) { z-index: 8; }
   .page-stack > .chapter-band { position: relative; top: auto; }
   .section-heading { flex-direction: column; gap: 20px; }
   .section-index { font-size: 8px; margin-bottom: 13px; letter-spacing: 1.3px; }

@@ -34,7 +34,7 @@ export function Hero({ onBirthday }: { onBirthday: (date: string, example?: bool
         <div className="art-bottom"><span>MÉS QUE UN CLUB.<br />A PART OF YOU.</span><span className="art-edition">EST.<br />29.11.1899</span></div>
         <div className="art-grain" aria-hidden="true" />
       </div>
-      <div className="hero-stamp" aria-hidden="true"><Asterisk size={24} /><span>DIFFERENT YEARS.<br />SAME COLOURS.</span></div>
+      
       <div className="art-caption"><span>41°22′51″N 2°07′23″E</span><span>HOME. ALWAYS.</span></div>
     </div>
     <div className="hero-bottom">
