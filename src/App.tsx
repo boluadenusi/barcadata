@@ -37,6 +37,21 @@ export default function App() {
 
   useEffect(() => { syncLive(); }, [syncLive]);
 
+  useEffect(() => {
+    if (!birthday) return;
+
+    const updateTallSections = () => {
+      const viewportHeight = window.innerHeight;
+      document.querySelectorAll<HTMLElement>('.page-stack > *').forEach((section) => {
+        section.classList.toggle('is-tall', section.scrollHeight > viewportHeight);
+      });
+    };
+
+    updateTallSections();
+    window.addEventListener('resize', updateTallSections);
+    return () => window.removeEventListener('resize', updateTallSections);
+  }, [birthday]);
+
   function changeBirthday(date: string, example = false) {
     setBirthday(date); setIsExample(example);
     requestAnimationFrame(() => {

@@ -117,6 +117,7 @@ h1 em { display: inline; margin-top: 0; font-size: inherit; letter-spacing: inhe
 .page-stack { position: relative; isolation: isolate; }
 .page-stack > * { position: sticky; top: auto; bottom: 0; min-height: 0; box-sizing: border-box; background: transparent; isolation: isolate; }
 .page-stack > *::before { content: ''; position: absolute; z-index: -1; inset: 0 calc((100vw - 100%) / -2); background: var(--paper); pointer-events: none; }
+.page-stack > .is-tall { position: relative; top: auto; bottom: auto; }
 .page-stack > *:nth-child(1) { z-index: 8; }
 .page-stack > *:nth-child(2) { z-index: 7; }
 .page-stack > *:nth-child(3) { z-index: 6; }
@@ -279,6 +280,7 @@ h2 em { font-size: 1.12em; letter-spacing: -1px; }
   .chapter-band span:nth-child(3) { font-size: 24px; }
   .section-space { padding-top: 49px; padding-bottom: 49px; }
   .page-stack > * { position: sticky; top: 0; bottom: auto; min-height: 0; }
+  .page-stack > .is-tall { position: relative; top: auto; bottom: auto; }
   .page-stack > *:nth-child(1) { z-index: 1; }
   .page-stack > *:nth-child(2) { z-index: 2; }
   .page-stack > *:nth-child(3) { z-index: 3; }
