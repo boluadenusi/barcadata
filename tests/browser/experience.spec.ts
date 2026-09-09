@@ -90,7 +90,7 @@ test('out-of-archive birthdays show honest empty states with a way to explore th
   await page.getByLabel('Year of birth', { exact: true }).fill('2026');
   await page.getByRole('button', { name: 'Find my Barça' }).click();
   await expect(page.locator('.metric-0 .metric-value')).toHaveText('0');
-  await expect(page.locator('.mosaic-empty')).toContainText('after our May 2025 snapshot');
+  await expect(page.locator('.mosaic-empty')).toContainText('after our last recorded match');
   await expect(page.locator('.memories-empty')).toContainText('The best nights are still ahead');
   await page.getByRole('button', { name: 'All iconic nights', exact: true }).click();
   await expect(page.locator('.memory-card')).toHaveCount(9);

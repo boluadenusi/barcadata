@@ -1,4 +1,5 @@
 import { ChevronDown } from 'lucide-react';
+import type { SyntheticEvent } from 'react';
 import type { Trophy, TrophyType } from '../data/types';
 import { formatDate } from '../lib/stats';
 
@@ -10,11 +11,12 @@ const competitions: { name: TrophyType; nickname: string; tone: string }[] = [
 
 function TrophyDrawing({ variant }: { variant: TrophyType }) {
   const trophySources: Record<TrophyType, string> = {
-    LaLiga: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Trofeo_de_La_Liga_9900.jpg',
+    LaLiga: '/assets/trophies/laliga-trophy.jpeg',
     'Champions League': '/assets/trophies/champions-league-trophy.png',
     'Copa del Rey': '/assets/trophies/copa-del-rey-trophy.png',
   };
-  return <img className="trophy-drawing" src={trophySources[variant]} alt={`${variant} trophy`} />;
+  const className = `trophy-drawing trophy-drawing-${variant === 'LaLiga' ? 'laliga' : variant === 'Champions League' ? 'ucl' : 'copa'}`;
+  return <img className={className} src={trophySources[variant]} alt="" draggable="false" />;
   /*
   return <svg className="trophy-drawing" viewBox="0 0 160 165" fill="none" aria-hidden="true">
     <ellipse cx="80" cy="147" rx="49" ry="7" fill="currentColor" opacity=".07" />
@@ -34,6 +36,16 @@ function TrophyDrawing({ variant }: { variant: TrophyType }) {
 }
 
 export function TrophyCabinet({ trophies }: { trophies: Trophy[] }) {
+  function handleSeasonsToggle(event: SyntheticEvent<HTMLDetailsElement>) {
+    if (!event.currentTarget.open) return;
+    requestAnimationFrame(() => {
+      document.getElementById('trophies')?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+        block: 'start',
+      });
+    });
+  }
+
   return <section className="cabinet-section" id="trophies" aria-labelledby="cabinet-title"><div className="container section-space">
     <div className="section-heading"><div><h2 id="cabinet-title">YOUR TROPHY CABINET</h2></div></div>
     <div className="trophy-grid">{competitions.map(({ name, nickname, tone }) => {
@@ -41,9 +53,9 @@ export function TrophyCabinet({ trophies }: { trophies: Trophy[] }) {
       return <article className={`trophy-card trophy-${tone}`} key={name}>
         <div className="trophy-card-top"><span className="trophy-count">{won.length.toString().padStart(2, '0')}</span><TrophyDrawing variant={name} /></div>
         <h3>{name}</h3><p>{nickname}</p>
-        {won.length ? <details className="trophy-seasons"><summary>See the winning seasons <ChevronDown size={16} /></summary><ul>{won.map((trophy) => <li key={trophy.date}><strong>{trophy.season}</strong><time dateTime={trophy.date}>{formatDate(trophy.date, { month: 'short' })}</time></li>)}</ul></details> : <p className="trophy-empty">The next one is out there.</p>}
+        {won.length ? <details className="trophy-seasons" onToggle={handleSeasonsToggle}><summary>See the winning seasons <ChevronDown size={16} /></summary><ul>{won.map((trophy) => <li key={trophy.date}><strong>{trophy.season}</strong><time dateTime={trophy.date}>{formatDate(trophy.date, { month: 'short' })}</time></li>)}</ul></details> : <p className="trophy-empty">The next one is out there.</p>}
       </article>;
     })}</div>
-    <p className="coverage-note">Titles secured in your lifetime, within our 1993–May 2025 honours archive. Three major competitions. A lifetime of pride.</p>
+    <p className="coverage-note">Titles secured in your lifetime, within our honours archive to the present. Three major competitions. A lifetime of pride.</p>
   </div></section>;
 }

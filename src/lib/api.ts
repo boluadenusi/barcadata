@@ -17,7 +17,7 @@ export type MatchQuery = {
  */
 export const matchApi = {
   /**
-   * Retrieves all verified match records across 34 seasons (1993/94–2026/27).
+   * Retrieves all verified match records across 88 seasons (1939/40–2026/27).
    */
   getAllMatches(): Match[] {
     return archiveMatches;
@@ -47,17 +47,18 @@ export const matchApi = {
    * Returns external provenance URL for a given match.
    */
   getSourceUrl(match: Match): { url: string; label: string } {
-    if (match.season <= '2024/25') {
-      const code = match.season.slice(2, 4) + match.season.slice(-2);
-      return {
-        url: `https://football-data.co.uk/mmz4281/${code}/SP1.csv`,
-        label: 'View season source (Football-Data CSV)',
-      };
-    }
+    const startYear = Number(match.season.slice(0, 4));
     if (match.season === '2025/26') {
       return {
         url: 'https://www.laliga.com/en-GB/laliga-easports/standing',
         label: 'View 2025/26 official record (LaLiga)',
+      };
+    }
+    if (startYear >= 1990) {
+      const code = match.season.slice(2, 4) + match.season.slice(-2);
+      return {
+        url: `https://football-data.co.uk/mmz4281/${code}/SP1.csv`,
+        label: 'View season source (Football-Data CSV)',
       };
     }
     return {
@@ -66,4 +67,3 @@ export const matchApi = {
     };
   },
 };
-

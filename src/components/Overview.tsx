@@ -18,7 +18,7 @@ export function Overview({ stats, birthday, isExample, trophyCount }: Props) {
     </div>
     <div className="data-context" role="status">
       {isExample ? 'A little preview for someone born on 29 November 1999. Enter your birthday to make it yours.' : `Your story begins on ${formatDate(birthday)}. Here’s the Barça you’ve lived through.`}
-      {birthday < ARCHIVE_START && <strong> Your match totals start with our archive in September 1993.</strong>}
+      {birthday < ARCHIVE_START && <strong> Your match totals start with our archive in December 1939.</strong>}
       {stats.matches.length === 0 && <strong> Your birthday is after our last archived match. The next chapter is yours to write.</strong>}
     </div>
     <div className="metrics-row" key={birthday}>
@@ -37,6 +37,6 @@ export function Overview({ stats, birthday, isExample, trophyCount }: Props) {
         <div className="record-legend"><span><i className="swatch win" /> {number(stats.wins)} wins</span><span><i className="swatch draw" /> {number(stats.draws)} draws</span><span><i className="swatch loss" /> {number(stats.losses)} losses</span></div>
       </div>
     </div>
-    <p className="coverage-note">Men’s first team · LaLiga, Sep 1993–Present· Major honours counted separately across three competitions.</p>
+    <p className="coverage-note">Men’s first team · LaLiga, 1939–Present · Major honours counted separately across three competitions.</p>
   </section>;
 }

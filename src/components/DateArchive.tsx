@@ -29,8 +29,8 @@ export function DateArchive({ archive, birthday }: { archive: Match[]; birthday:
         <div className="calendar-record-stats"><span><strong>{stats.matches.length}</strong> matches</span><span><strong>{stats.wins}</strong> wins</span><span><strong>{stats.winRate.toFixed(0)}%</strong> win rate</span></div>
         <ul className="date-match-list">{shown.map((match) => <li key={match.date}><time dateTime={match.date}>{match.date.slice(0, 4)}</time><span>Barça <strong>{match.gf}–{match.ga}</strong> {match.opponent}</span><span className={`date-result date-result-${match.result}`}>{match.result === 'W' ? 'WIN' : match.result === 'D' ? 'DRAW' : 'LOSS'}</span></li>)}</ul>
         {stats.matches.length > 3 && <button className="text-button date-expand" onClick={() => setShowAll(!showAll)} aria-expanded={showAll}>{showAll ? 'Show fewer matches' : `See all ${stats.matches.length} matches`} <ArrowUpRight size={14} /></button>}
-      </> : <div className="calendar-empty"><span>A quiet day<br /><em>in the archive.</em></span><p>No league matches on this date in our 1993–2025 records. Even football needs a breather.</p><button className="text-button" onClick={() => { setMonth(11); setDay(29); setShowAll(false); }}>Try Barça’s birthday, 29 November <ArrowUpRight size={15} /></button></div>}
-      <p className="calendar-scope">LaLiga · 1993–2025 · All years, including those before your birth.</p>
+      </> : <div className="calendar-empty"><span>A quiet day<br /><em>in the archive.</em></span><p>No league matches on this date in our records. Even football needs a breather.</p><button className="text-button" onClick={() => { setMonth(11); setDay(29); setShowAll(false); }}>Try Barça’s birthday, 29 November <ArrowUpRight size={15} /></button></div>}
+      <p className="calendar-scope">LaLiga · 1939–present · All years, including those before your birth.</p>
     </div>
   </section>;
 }

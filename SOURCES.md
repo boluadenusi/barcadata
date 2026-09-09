@@ -3,14 +3,14 @@
 This is an independent fan project. It is not affiliated with FC Barcelona.
 
 ## Match archive
-FC Barcelona men's first-team LaLiga results, 1993/94–2024/25. Original CSV files: [Football-Data.co.uk](https://www.football-data.co.uk/spainm.php), at `https://football-data.co.uk/mmz4281/{season}/SP1.csv`.
+FC Barcelona men's first-team LaLiga results, 1939/40–2024/25. Seasons from 1993/94 onward come from the Football-Data.co.uk CSV files at `https://football-data.co.uk/mmz4281/{season}/SP1.csv`; earlier seasons (1939/40–1957/58 and 1990/91–1992/93) were transcribed from historical league records and imported with `node scripts/import-pasted.mjs`.
 
-Only completed league matches are included. Goals and results are normalized to Barcelona's perspective. Birthdays are inclusive. For birthdays before the archive begins, match statistics cover the available archive and are explicitly labelled. Dates after 25 May 2025 return an empty record, not invented results. No live-feed claim is made.
+Only completed league matches are included. Goals and results are normalized to Barcelona's perspective. Birthdays are inclusive. For birthdays before the archive begins, match statistics cover the available archive and are explicitly labelled. Beyond the last recorded match, birthdays return an empty record, not invented results. No live-feed claim is made.
 
-The import script requires 38 Barcelona fixtures in every season except 1995/96 and 1996/97 (42). It rejects duplicate match dates, missing scores, and incomplete seasons. Raw downloads stay in `.cache/football-data`; `node scripts/import-matches.mjs` produces the checked-in JSON.
+The Football-Data import requires 38 Barcelona fixtures in every season except 1995/96 and 1996/97 (42). Historical seasons hold 22–38 fixtures, matching each era's league size. Both importers reject duplicate match dates, missing scores, and incomplete seasons. Raw downloads stay in `.cache/football-data`; `node scripts/import-matches.mjs` produces the checked-in JSON.
 
 ## Honours and historical editorial content
-Major honours count LaLiga, European Cup / Champions League, and Copa del Rey titles secured from 1993 through 25 May 2025. Super cups and other competitions are excluded. Trophy date means the league-clinching date or cup-final date, not the season's last match. The 1993 league title predates the first fixture season in the match archive; these coverages are deliberately documented separately.
+Major honours count LaLiga, European Cup / Champions League, and Copa del Rey titles secured from 1993 onward. Super cups and other competitions are excluded. Trophy date means the league-clinching date or cup-final date, not the season's last match. Honours coverage is deliberately documented separately from the match archive.
 
 - [FC Barcelona honours](https://www.fcbarcelona.com/en/football/first-team/honours)
 - [FC Barcelona history](https://www.fcbarcelona.com/en/club/history)

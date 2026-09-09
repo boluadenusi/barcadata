@@ -38,6 +38,7 @@
 .trophy-europe .trophy-count { color: var(--garnet); }
 .trophy-cup .trophy-count { color: #8a6334; }
 .trophy-drawing { width: 152px; height: 174px; object-fit: contain; mix-blend-mode: multiply; }
+.trophy-drawing-laliga { filter: invert(1) contrast(1.2); }
 .trophy-card h3 { font-family: var(--font-display); font-size: 21px; font-weight: 500; letter-spacing: -.8px; margin-top: 16px; }
 .trophy-card > p { color: var(--muted); font-size: 11px; line-height: 1.5; margin-top: 9px; }
 .trophy-seasons { margin-top: 23px; }
@@ -56,8 +57,8 @@
   .personal-note { padding: 23px 21px; }
   .personal-note h3 { font-size: 35px; }
   .note-description { font-size: 10px; }
-  .trophy-count { font-size: 65px; }
   .trophy-drawing { width: 128px; height: 154px; }
+  .trophy-count { font-size: 65px; }
   .trophy-card { padding-inline: 26px; }
 }
 @media (max-width: 899px) {
@@ -77,8 +78,8 @@
   .cabinet-section h2 { font-size: 46px; }
   .cabinet-intro { font-size: 11px; }
   .trophy-card { padding: 24px 19px 18px; }
-  .trophy-count { font-size: 57px; }
   .trophy-drawing { width: 105px; height: 136px; }
+  .trophy-count { font-size: 57px; }
   .trophy-card-top { gap: 8px; }
   .trophy-card h3 { font-size: 18px; letter-spacing: -.7px; }
   .trophy-card > p { font-size: 10px; }
@@ -109,8 +110,8 @@
   .trophy-card, .trophy-card:first-child, .trophy-card:last-child { padding: 22px 0; }
   .trophy-card + .trophy-card { border-left: 0; border-top: 1px solid var(--line); }
   .trophy-card-top { float: right; width: 47%; height: 110px; flex-direction: row-reverse; }
-  .trophy-count { font-size: 58px; align-self: start; padding-top: 5px; }
   .trophy-drawing { width: 88px; height: 119px; margin-top: -1px; }
+  .trophy-count { font-size: 58px; align-self: start; padding-top: 5px; }
   .trophy-card h3 { font-size: 21px; max-width: 48%; margin-top: 8px; }
   .trophy-card > p { max-width: 46%; font-size: 11px; line-height: 1.6; }
   .trophy-seasons { clear: both; padding-top: 15px; margin-top: 20px; }

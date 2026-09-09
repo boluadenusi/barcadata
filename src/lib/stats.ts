@@ -1,6 +1,6 @@
 import type { Match, Result, Trophy } from '../data/types';
 
-export const ARCHIVE_START = '1993-09-05';
+export const ARCHIVE_START = '1939-12-03';
 /** Dynamic cutoff: use today's date so live-synced matches and trophies are always included. */
 export const ARCHIVE_END = new Date().toISOString().slice(0, 10);
 export const EXAMPLE_BIRTHDAY = '1999-11-29';
@@ -45,6 +45,22 @@ export function closestPlayer(players: { name: string; birthday: string }[], bir
 
 export function filterMatches(matches: Match[], result: Result | 'all', season: string) {
   return matches.filter((match) => (result === 'all' || match.result === result) && (season === 'all' || match.season === season));
+}
+
+export function getOpponentRankings(matches: Match[]) {
+  const byOpponent = new Map<string, { opponent: string; matches: number; wins: number; draws: number; goalsFor: number; goalsAgainst: number }>();
+  for (const match of matches) {
+    const current = byOpponent.get(match.opponent) ?? { opponent: match.opponent, matches: 0, wins: 0, draws: 0, goalsFor: 0, goalsAgainst: 0 };
+    current.matches += 1;
+    current.wins += match.result === 'W' ? 1 : 0;
+    current.draws += match.result === 'D' ? 1 : 0;
+    current.goalsFor += match.gf;
+    current.goalsAgainst += match.ga;
+    byOpponent.set(match.opponent, current);
+  }
+  return [...byOpponent.values()]
+    .map((item) => ({ ...item, winRate: item.matches ? item.wins / item.matches * 100 : 0 }))
+    .sort((a, b) => b.matches - a.matches || b.wins - a.wins || a.opponent.localeCompare(b.opponent));
 }
 
 export function ageOn(birthday: string, date: string) {

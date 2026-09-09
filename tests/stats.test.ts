@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { ageOn, closestPlayer, filterMatches, getLifetimeStats, parseBirthday } from '../src/lib/stats';
+import { players } from '../src/data/history';
+import { ageOn, closestPlayer, filterMatches, getLifetimeStats, getOpponentRankings, parseBirthday } from '../src/lib/stats';
 import type { Match } from '../src/data/types';
 
 const matches: Match[] = [
@@ -29,6 +30,11 @@ describe('birthday validation', () => {
 });
 
 describe('lifetime statistics', () => {
+  it('uses exactly 100 players aged 25–40 for the peer comparison', () => {
+    expect(players).toHaveLength(100);
+    expect(players.every(({ birthday }) => birthday >= '1986-09-10' && birthday <= '2001-09-09')).toBe(true);
+  });
+
   it('finds the nearest player birthday in either direction, including leap days', () => {
     const players = [{ name: 'Ferran Torres', birthday: '2000-02-29' }, { name: 'Riqui Puig', birthday: '1999-08-13' }];
     expect(closestPlayer(players, '1999-11-29')).toMatchObject({ name: 'Ferran Torres', gap: 92 });
@@ -64,5 +70,10 @@ describe('lifetime statistics', () => {
     expect(ageOn('1999-11-29', '2010-11-28')).toBe(10);
     expect(ageOn('1999-11-29', '2010-11-29')).toBe(11);
     expect(ageOn('1999-11-29', '1998-01-01')).toBeNull();
+  });
+  it('ranks lifetime opponents by meetings and calculates win rates', () => {
+    const rankings = getOpponentRankings(matches);
+    expect(rankings.find((item) => item.opponent === 'Valencia')).toMatchObject({ matches: 1, wins: 1, winRate: 100 });
+    expect(rankings).toHaveLength(4);
   });
 });

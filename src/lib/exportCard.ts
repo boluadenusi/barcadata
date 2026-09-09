@@ -26,13 +26,13 @@ export async function createPersonalCard({ birthday, stats, trophyCount, isExamp
     context.fillStyle = paper; context.fillRect(0, 0, 1080, 1350);
     context.fillStyle = blue; context.fillRect(0, 0, 540, 9);
     context.fillStyle = garnet; context.fillRect(540, 0, 540, 9);
-    text('culé.', 76, 131, 103, ink, 'Instrument Serif');
+    text('culé.', 76, 131, 103, ink, 'Barcelona 26/27', '400');
     context.fillStyle = blue; context.fillRect(81, 144, 62, 5);
     context.fillStyle = garnet; context.fillRect(143, 144, 62, 5);
     text('THE BARCELONA', 755, 103, 16, ink, undefined, '500');
     text('NUMBERS PROJECT', 755, 128, 16, ink, undefined, '500');
-    text(isExample ? 'A CULER’S LIFE.' : 'MY LIFE.', 75, 302, isExample ? 83 : 108, ink, 'Barcelona 26/27', '600');
-    text('In blaugrana.', 72, 439, 142, blue, 'Barcelona 26/27');
+    text('Your life.', 75, 302, 142, ink, 'Barcelona 26/27', '700');
+    text('In blaugrana.', 72, 393, 142, blue, 'Barcelona 26/27', '700');
     text(`${isExample ? 'EXAMPLE · ' : ''}BORN ${formatDate(birthday).toUpperCase()}`, 80, 489, 19, ink, undefined, '500');
     line(80, 540, 1000, 540); line(80, 785, 1000, 785); line(80, 1030, 1000, 1030); line(530, 540, 530, 1030);
     const cells = [
@@ -52,10 +52,9 @@ export async function createPersonalCard({ birthday, stats, trophyCount, isExamp
         context.fillStyle = fill; context.fillRect(offset, 1091, Math.max(0, width - 3), 12); offset += width;
     }
     text(`${stats.winRate.toFixed(1)}% WIN RATE`, 80, 1070, 16, ink, undefined, '500');
-    text('Made of numbers. Built on a feeling.', 78, 1205, 47, ink, 'Instrument Serif', '400');
-    text('MEN’S FIRST TEAM · LALIGA, SEP 1993–MAY 2025', 80, 1263, 13, '#586254');
-    text('MAJOR HONOURS: LALIGA, CHAMPIONS LEAGUE & COPA DEL REY · 1993–MAY 2025', 80, 1286, 11, '#586254');
-    text('INDEPENDENT FAN PROJECT · MATCH DATA: FOOTBALL-DATA.CO.UK', 80, 1308, 11, '#586254');
+    text('MEN’S FIRST TEAM · LALIGA, 1939–PRESENT', 80, 1205, 13, '#586254');
+    text('MAJOR HONOURS: LALIGA, CHAMPIONS LEAGUE & COPA DEL REY · 1945–MAY 2026', 80, 1228, 11, '#586254');
+    text('INDEPENDENT FAN PROJECT · MATCH DATA: FOOTBALL-DATA.CO.UK', 80, 1250, 11, '#586254');
 
     return new Promise((resolve, reject) => canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error('The image could not be created. Please try again.')), 'image/png'));
 }
