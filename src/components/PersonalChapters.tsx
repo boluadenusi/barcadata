@@ -22,7 +22,7 @@ export function PersonalChapters({ birthday, firstMatch }: { birthday: string; f
                     <img src="/assets/trophies/fc-barcelona-2026-27-home.png" alt="" draggable="false" />
                     <div className="shirt-personalisation"><span>{peer?.name.split(' ').at(-1) ?? 'BARÇA'}</span><strong>{peer?.birthday.slice(2, 4) ?? '26'}</strong></div>
                 </div>
-                <p className="note-kicker">The Barça player closest to your age</p><h3>{peer?.name}</h3><p className="note-description">{peer?.gap === 0 ? 'The same birthday. Some things are just meant to be.' : <>Born {peer && formatDate(peer.birthday)}.<br />Just {number(peer?.gap ?? 0)} days between your stories.</>}</p><span className="curation-note">From our selection of 100 Barça players aged 25–40.</span>
+                <p className="note-kicker">The Barça player closest to your age</p><h3>{peer?.name}</h3><p className="note-description">{peer?.gap === 0 ? 'The same birthday. Some things are just meant to be.' : <>Born {peer && formatDate(peer.birthday)}.<br />Just {number(peer?.gap ?? 0)} days between your stories.</>}</p>
             </article>
             <article className="personal-note first-match-note">
                 <div className="note-label"><span>THE FIRST WHISTLE</span><span>03</span></div>

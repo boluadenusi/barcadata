@@ -162,12 +162,28 @@ const allPlayers = [
 ['Thiago Alcântara', '1991-04-11'], ['Isaac Cuenca', '1991-04-27'],
 ].map(([name, birthday]) => ({ name, birthday }));
 
+// Current men's first-team roster snapshot for the 2026/27 season.
+const currentFirstTeamPlayers = [
+  ['Joan García', '2001-05-04'], ['Wojciech Szczęsny', '1990-04-18'], ['Dominik Livaković', '1995-01-09'],
+  ['Eder Aller', '2008-01-01'], ['João Cancelo', '1994-05-27'], ['Alejandro Balde', '2003-10-18'],
+  ['Pau Cubarsí', '2007-01-22'], ['Xavi Espart', '2007-01-01'], ['Andreas Christensen', '1996-04-10'],
+  ['Gerard Martín', '2002-02-26'], ['Jules Koundé', '1998-11-12'], ['Eric García', '2001-01-09'],
+  ['Jordi Pesquer', '2008-01-01'], ['Brian Fariñas', '2006-02-09'], ['Gavi', '2004-08-05'],
+  ['Fermín López', '2003-05-11'], ['Pedri', '2002-11-25'], ['Rodri', '1996-06-22'],
+  ['Dani Olmo', '1998-05-07'], ['Frenkie de Jong', '1997-05-12'], ['Marc Bernal', '2007-05-26'],
+  ['Jesse Bisiwu', '2008-01-01'], ['Gabriel Jesus', '1997-04-03'], ['Lamine Yamal', '2007-07-13'],
+  ['Raphinha', '1996-12-14'], ['Karim Adeyemi', '2002-01-18'], ['Anthony Gordon', '2001-02-24'],
+  ['Roony Bardghji', '2005-11-15'], ['Hamza Abdelkarim', '2005-01-01'], ['Toni Fernández', '2008-02-15'],
+].map(([name, birthday]) => ({ name, birthday }));
+
 // Keep the peer comparison focused on players aged 25–40 on 9 September 2026.
 const playerSelectionStart = '1986-09-10';
 const playerSelectionEnd = '2001-09-09';
-export const players = allPlayers
+const agePeers = allPlayers
   .filter(({ birthday }) => birthday >= playerSelectionStart && birthday <= playerSelectionEnd)
   .slice(0, 100);
+export const players = [...agePeers, ...currentFirstTeamPlayers]
+  .filter((player, index, list) => list.findIndex(({ name }) => name === player.name) === index);
 
 export const moments = [
   { date: '1989-05-10', tag: 'THE RETURN OF JOY', title: 'A trophy in Bern.', score: '2 — 0', opponent: 'Sampdoria', competition: 'European Cup Winners’ Cup final', description: 'Koeman’s free kick and a team that refused to let the dream drift away. Europe belonged to Barça again.', color: 'blue' },
