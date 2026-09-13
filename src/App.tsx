@@ -87,7 +87,7 @@ export default function App() {
       </div>}
     </main>
     {birthday && <footer className="site-footer container">
-      <div><Brand /><p>Made of numbers.<br />Built on a feeling.</p></div>
+      <div><Brand /><p>Made of numbers.<br />Built on a feeling.💙❤️</p></div>
       <div className="footer-info"><p>An independent project for every generation of culers.</p><button className="text-button" onClick={() => setAbout(true)}>Sources, scope & a little context <ArrowUpRight size={15} /></button><p className="footer-small">Not affiliated with FC Barcelona. Always on their side.</p></div>
     </footer>}
     {about && <Methodology onClose={() => setAbout(false)} />}

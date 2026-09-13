@@ -10,9 +10,10 @@ Only completed league matches are included. Goals and results are normalized to 
 The Football-Data import requires 38 Barcelona fixtures in every season except 1995/96 and 1996/97 (42). Historical seasons hold 22–38 fixtures, matching each era's league size. Both importers reject duplicate match dates, missing scores, and incomplete seasons. Raw downloads stay in `.cache/football-data`; `node scripts/import-matches.mjs` produces the checked-in JSON.
 
 ## Honours and historical editorial content
-Major honours count LaLiga, European Cup / Champions League, and Copa del Rey titles secured from 1993 onward. Super cups and other competitions are excluded. Trophy date means the league-clinching date or cup-final date, not the season's last match. Honours coverage is deliberately documented separately from the match archive.
+Major honours count every LaLiga, European Cup / Champions League, and Copa del Rey title in the men's first-team record. Super cups and other competitions are excluded. Trophy date means the league-clinching date or cup-final date, not the season's last match. Honours coverage is deliberately documented separately from the match archive.
 
 - [FC Barcelona honours](https://www.fcbarcelona.com/en/football/first-team/honours)
+- [RFEF: 32nd Copa del Rey honours list](https://rfef.es/en/noticias/honours-list-32nd-cup-success-for-fc-barcelona)
 - [FC Barcelona history](https://www.fcbarcelona.com/en/club/history)
 - [UEFA: Barcelona history](https://www.uefa.com/uefachampionsleague/history/clubs/50080--barcelona/)
 - [List of FC Barcelona managers](https://en.wikipedia.org/wiki/List_of_FC_Barcelona_managers)

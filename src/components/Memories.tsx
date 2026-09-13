@@ -43,7 +43,7 @@ export function Memories({ birthday }: { birthday: string }) {
       {items.map((moment) => {
         const age = ageOn(birthday, moment.date);
         return <article className={`memory-card memory-${moment.color}`} key={moment.date}>
-          <div className="memory-card-label"><span>{moment.tag}</span><span>↗</span></div>
+          <div className="memory-card-label"><span>{moment.tag}</span><span></span></div>
           <div className="memory-score">{moment.score}</div>
           <p className="memory-opponent"><TeamLogo name="FC Barcelona" size={24} /> FC BARCELONA <span>vs</span> <TeamLogo name={moment.opponent} size={24} /> {moment.opponent.toUpperCase()}</p>
           <h3>{moment.title}</h3>
